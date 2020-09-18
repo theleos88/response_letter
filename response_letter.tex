@@ -1,0 +1,98 @@
+\documentclass[11pt]{article}
+\usepackage{lmodern}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[autostyle]{csquotes}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{a4wide}
+\usepackage{multirow}
+\usepackage{comment}
+\usepackage{pdfpages}
+\usepackage{url}
+
+% import Eq and Section references from the main manuscript if needed
+% \usepackage{xr}
+% \externaldocument{manuscript}
+
+\newcommand{\DONE}[1]{\textcolor{green}{\bf DONE: #1}}
+\newcommand{\DOING}[1]{\textcolor{magenta}{\bf DOING: #1}}
+\newcommand{\TODO}[1]{\textcolor{red}{\bf TODO:  #1}}
+
+
+% define counters for reviewers and their points
+\newcounter{reviewer} 
+\setcounter{reviewer}{0}
+\newcounter{point}[reviewer]
+\setcounter{point}{0}
+
+% This refines the format of how the reviewer/point reference will appear.
+\renewcommand{\thepoint}{Q\,\thereviewer.\arabic{point}} 
+
+% command declarations for reviewer points and our responses
+\newcommand{\reviewersection}{\stepcounter{reviewer}
+                  \section*{Reviewer \thereviewer}}
+\newcommand{\point}[1]{~\\\refstepcounter{point}  \bigskip \hrule \medskip \noindent 
+               {{\fontseries{b}\selectfont \thepoint} \textit{ #1}}  \par}
+\newcommand{\reply}{\medskip \noindent \textbf{Reply}:\ }   
+
+\begin{document}
+% General intro text goes here
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Variable Section
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\journal{JOURNAL TITLE}
+\newcommand\manuscript{MANUSCRIPT TITLE}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}
+{\large Answer to Reviewers' comments, for \journal{} titled:}\\
+{\Large {\it ``\manuscript''}}\\
+\end{center}
+\vspace{2cm}
+
+{$\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad $ { Paris, \today}}\\
+~\\
+\noindent Dear Editors and Reviewers,\\
+
+We thank you for the time spent in the submission process, as well as for your precious and insightful suggestions.
+Based on the Reviewers' feedback, we implemented some changes to the manuscript, which we now believe to fully address the minor revisions required. 
+\\
+
+%\TODO{major mods}
+
+In particular, our major modifications are summarized in the following list:
+\begin{itemize}
+	\item These
+	\item Those
+	\item That one in particular.
+\end{itemize}
+
+
+The remainder of this document contains all the Reviewers' questions (\emph{in italic}) as well as our replies (in plain text), in which we detail the corresponding modifications to the manuscript.\\
+
+\noindent Thanks in advance for your consideration and best regards,\\
+Author1 on behalf of all coauthors.
+
+
+\clearpage
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\reviewersection
+
+\point{ \label{p:first} Point \ref{p:first} }
+
+\reply{Thank you for \ref{p:first} }.
+
+
+\pagebreak
+
+
+
+\end{document}
